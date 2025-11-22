@@ -1,12 +1,11 @@
-# app.py
+# app.pyimport os
 from flask import Flask, render_template, request, redirect, url_for, flash
-import os
 from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'dev_key_123')
 
-# Datos de la empresa (podrían moverse a una base de datos en el futuro)
+# Datos de la empresa
 empresa_info = {
     "nombre": "BerriBerri Teknno",
     "slogan": "Tecnología renovada para un futuro nuevo",
@@ -50,33 +49,31 @@ empresa_info = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', empresa=empresa_info)
+    return render_template('index.html', empresa=empresa_info, now=datetime.now())
 
 @app.route('/servicios')
 def servicios():
-    return render_template('servicios.html', empresa=empresa_info)
+    return render_template('servicios.html', empresa=empresa_info, now=datetime.now())
 
 @app.route('/formacion')
 def formacion():
-    return render_template('formacion.html', empresa=empresa_info)
+    return render_template('formacion.html', empresa=empresa_info, now=datetime.now())
 
 @app.route('/contacto', methods=['GET', 'POST'])
 def contacto():
     if request.method == 'POST':
-        # Aquí procesaríamos el formulario de contacto
         nombre = request.form.get('nombre')
         email = request.form.get('email')
         mensaje = request.form.get('mensaje')
         
-        # En un entorno real, aquí enviaríamos un email o guardaríamos en BD
         flash(f'Gracias {nombre}, hemos recibido tu mensaje. Te contactaremos pronto.', 'success')
         return redirect(url_for('contacto'))
     
-    return render_template('contacto.html', empresa=empresa_info)
+    return render_template('contacto.html', empresa=empresa_info, now=datetime.now())
 
 @app.route('/sobre-nosotros')
 def sobre_nosotros():
-    return render_template('sobre_nosotros.html', empresa=empresa_info)
+    return render_template('sobre_nosotros.html', empresa=empresa_info, now=datetime.now())
 
 if __name__ == '__main__':
-    app.run(debug=os.environ.get('DEBUG', True))
+    app.run(host='0.0.0.0', port=5000, debug=os.environ.get('DEBUG', False))
