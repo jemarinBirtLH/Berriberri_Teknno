@@ -1,0 +1,95 @@
+<!-- templates/formacion.html -->
+{% extends "base.html" %}
+
+{% block title %}Formación - {{ empresa.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-4 fw-bold text-primary-custom">Formación Digital</h1>
+            <p class="lead">Desarrollamos las competencias digitales que necesitas</p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <div class="card border-0 shadow">
+                <div class="card-body p-5">
+                    <h3 class="text-center mb-4">Nuestro Enfoque Formativo</h3>
+                    <p class="lead text-center mb-4">"Acompañamiento real en todo el proceso de aprendizaje desde el inicio hasta su finalización"</p>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <i class="fas fa-users text-primary-custom fa-2x me-3"></i>
+                                <div>
+                                    <h5>Colectivos Vulnerables</h5>
+                                    <p class="text-muted">Formación adaptada para personas desempleadas y mayores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <i class="fas fa-building text-primary-custom fa-2x me-3"></i>
+                                <div>
+                                    <h5>Empresas</h5>
+                                    <p class="text-muted">Planes de formación a medida para tu plantilla</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <i class="fas fa-mobile-alt text-primary-custom fa-2x me-3"></i>
+                                <div>
+                                    <h5>Modalidades Flexibles</h5>
+                                    <p class="text-muted">Presencial, online o mixta según tus necesidades</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="d-flex">
+                                <i class="fas fa-briefcase text-primary-custom fa-2x me-3"></i>
+                                <div>
+                                    <h5>Enfoque Laboral</h5>
+                                    <p class="text-muted">Itinerarios para mejorar la empleabilidad</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                    <i class="fas fa-shield-alt fa-3x text-primary-custom mb-3"></i>
+                    <h4>Ciberseguridad</h4>
+                    <p>Protección de datos y sistemas informáticos para empresas y usuarios</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                    <i class="fas fa-network-wired fa-3x text-primary-custom mb-3"></i>
+                    <h4>Redes y Conectividad</h4>
+                    <p>Configuración y mantenimiento de infraestructuras de red</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body text-center p-4">
+                    <i class="fas fa-cogs fa-3x text-primary-custom mb-3"></i>
+                    <h4>Hardware y Software</h4>
+                    <p>Mantenimiento y reparación de equipos informáticos</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

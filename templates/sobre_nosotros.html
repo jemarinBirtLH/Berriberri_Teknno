@@ -1,0 +1,60 @@
+<!-- templates/sobre_nosotros.html -->
+{% extends "base.html" %}
+
+{% block title %}Sobre Nosotros - {{ empresa.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+            <h1 class="display-4 fw-bold text-primary-custom text-center mb-4">Sobre BerriBerri Teknno</h1>
+            <p class="lead text-center">Tecnología con propósito, formación con impacto</p>
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-lg-6">
+            <h2 class="fw-bold mb-4">Nuestra Misión</h2>
+            <p class="mb-4">En BerriBerri Teknno trabajamos para democratizar el acceso a la tecnología y las competencias digitales, promoviendo la economía circular y la inclusión social.</p>
+            
+            <h3 class="fw-bold mb-3">¿Qué nos hace diferentes?</h3>
+            <ul class="list-unstyled">
+                <li class="mb-3">
+                    <strong class="text-primary-custom">Enfoque Integral:</strong>
+                    <p class="mb-0">Combinamos reacondicionamiento tecnológico con formación digital en un único modelo de negocio.</p>
+                </li>
+                <li class="mb-3">
+                    <strong class="text-primary-custom">Compromiso Social:</strong>
+                    <p class="mb-0">Atención especial a colectivos vulnerables y personas con recursos limitados.</p>
+                </li>
+                <li class="mb-3">
+                    <strong class="text-primary-custom">Sostenibilidad:</strong>
+                    <p class="mb-0">Promovemos la economía circular dando una segunda vida a la tecnología.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <div class="bg-light rounded p-4">
+                <h3 class="fw-bold mb-3">Nuestros Valores</h3>
+                {% for valor in empresa.valores %}
+                <div class="mb-3 p-3 bg-white rounded">
+                    <h5 class="text-primary-custom mb-2">{{ valor.titulo }}</h5>
+                    <p class="mb-0">{{ valor.descripcion }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card border-0 bg-primary-custom text-white">
+                <div class="card-body p-5 text-center">
+                    <h3 class="mb-3">"Tecnología renovada para un futuro nuevo"</h3>
+                    <p class="mb-0">Creemos en un futuro donde la tecnología sea accesible para todos y donde cada dispositivo tenga una segunda oportunidad.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

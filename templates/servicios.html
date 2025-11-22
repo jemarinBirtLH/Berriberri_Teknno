@@ -1,0 +1,78 @@
+<!-- templates/servicios.html -->
+{% extends "base.html" %}
+
+{% block title %}Servicios - {{ empresa.nombre }}{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col text-center">
+            <h1 class="display-4 fw-bold text-primary-custom">Nuestros Servicios</h1>
+            <p class="lead">Soluciones integrales en reacondicionamiento tecnológico y formación digital</p>
+        </div>
+    </div>
+
+    <!-- Reacondicionamiento Tecnológico -->
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6">
+            <h2 class="fw-bold mb-4">Reacondicionamiento Tecnológico</h2>
+            <ul class="list-unstyled">
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Recogida de equipos informáticos en desuso</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Diagnóstico técnico y reparación profesional</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Actualización de hardware y software</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Borrado seguro de datos (RGPD)</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Instalación de software libre</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Venta y alquiler de equipos reacondicionados</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="bg-light rounded p-5">
+                <i class="fas fa-laptop-code fa-6x text-primary-custom mb-4"></i>
+                <h4>Economía Circular</h4>
+                <p class="text-muted">Damos una segunda vida a la tecnología</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formación -->
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-6 order-lg-2">
+            <h2 class="fw-bold mb-4">Formación en Habilidades Digitales</h2>
+            <ul class="list-unstyled">
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Talleres presenciales y online</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Competencias digitales básicas y avanzadas</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Planes de formación personalizados para empresas</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Atención especial a colectivos vulnerables</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Itinerarios formativos para mejorar la empleabilidad</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 order-lg-1 text-center">
+            <div class="bg-light rounded p-5">
+                <i class="fas fa-chalkboard-teacher fa-6x text-primary-custom mb-4"></i>
+                <h4>Inclusión Digital</h4>
+                <p class="text-muted">Formación accesible para todos</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mantenimiento -->
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <h2 class="fw-bold mb-4">Mantenimiento Integral</h2>
+            <ul class="list-unstyled">
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Suscripciones preventivas y correctivas</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Soporte técnico a demanda</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Mantenimiento para empresas e instituciones</li>
+                <li class="mb-3"><i class="fas fa-check text-primary-custom me-2"></i>Respuesta rápida y eficiente</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="bg-light rounded p-5">
+                <i class="fas fa-tools fa-6x text-primary-custom mb-4"></i>
+                <h4>Soporte Continuo</h4>
+                <p class="text-muted">Mantenimiento cuando lo necesites</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
