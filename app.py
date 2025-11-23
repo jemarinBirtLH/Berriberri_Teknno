@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, send_from_directory
 from datetime import datetime
 
 app = Flask(__name__)
@@ -49,7 +49,8 @@ empresa_info = {
 
 @app.route('/')
 def index():
-    return render_template('index.html', empresa=empresa_info, now=datetime.now())
+    videos = get_videos_list()
+    return render_template('index.html', empresa=empresa_info, now=datetime.now(), videos=videos)
 
 @app.route('/servicios')
 def servicios():
@@ -74,6 +75,22 @@ def contacto():
 @app.route('/sobre-nosotros')
 def sobre_nosotros():
     return render_template('sobre_nosotros.html', empresa=empresa_info, now=datetime.now())
+
+
+def get_videos_list():
+    videos_dir = os.path.join(os.path.dirname(__file__), 'videos')
+    if not os.path.isdir(videos_dir):
+        return []
+    allowed_ext = ('.mp4', '.webm', '.ogg')
+    files = [f for f in os.listdir(videos_dir) if f.lower().endswith(allowed_ext)]
+    files.sort()
+    return files
+
+
+@app.route('/videos/<path:filename>')
+def video_file(filename):
+    videos_dir = os.path.join(os.path.dirname(__file__), 'videos')
+    return send_from_directory(videos_dir, filename)
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

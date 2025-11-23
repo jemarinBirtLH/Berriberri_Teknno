@@ -85,6 +85,33 @@
     </div>
 </section>
 
+<!-- Videos Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col text-center">
+                <h2 class="display-5 fw-bold text-primary-custom">Nuestros Videos</h2>
+                <p class="lead">Contenido audiovisual sobre nuestro trabajo y misión</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for video in videos %}
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-body p-3">
+                        <video controls class="w-100" style="max-height:240px;">
+                            <source src="{{ url_for('video_file', filename=video) }}" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
+                        <h5 class="mt-2 text-truncate">{{ video }}</h5>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
 <!-- CTA Section -->
 <section class="py-5 bg-primary-custom text-white">
     <div class="container">
