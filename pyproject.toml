@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "berriberri-teknno"
+version = "0.1.0"
+description = "Sitio web para BerriBerri Teknno"
+authors = ["Grupo3 <grupo3@example.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+flask = "2.3.3"
+gunicorn = "21.2.0"
+
+[tool.poetry.group.dev.dependencies]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
